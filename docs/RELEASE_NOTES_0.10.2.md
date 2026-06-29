@@ -37,18 +37,8 @@ The Quick Panel and Dashboard shortcuts are now registered as true system hot ke
   another). We also avoid **⇧⌘D**, which browsers/dev tools use and Mugi reserves for **Deny shell command**.
 - If your chosen combo is already owned by another app, Settings now says so and suggests a free one —
   ⇧⌥-based combos are usually safe.
-
-### Shortcut diagnostics — see exactly why a shortcut isn't firing
-
-- **Settings → Dashboard → Shortcut diagnostics** shows the live health of the Dashboard shortcut:
-  whether it registered **system-wide**, whether the **in-app** monitor is active, the **stored combo**,
-  and a **Last triggered** line that updates the instant the shortcut fires. Press the keys with the
-  panel open and watch it light up — that's end-to-end proof, not a guess.
-- If a combo can't register (another app owns it), the panel says so instead of silently doing nothing.
-  **Re-register** and **Reset to default** buttons are right there.
-- The pane is also wired to the **correct** manager now: a SwiftUI `@EnvironmentObject` type-collision
-  meant the Dashboard pane was silently editing the **Quick Panel** shortcut, so Dashboard shortcut
-  changes never took effect. Fixed.
+- The Dashboard prefs pane is wired to the **correct** hotkey manager now (a SwiftUI `@EnvironmentObject`
+  type-collision had silently routed Dashboard shortcut edits to the Quick Panel manager). Fixed in 0.10.2.1.
 
 ### Calendar access that prompts correctly
 
