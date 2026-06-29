@@ -14,6 +14,8 @@
 
 ![Mugi main window](website/images/main-window-overview.png)
 
+![Mugi global Dashboard panel — vitals, calendar, weather, and agent chat](website/images/dashboard-panel.jpg)
+
 </div>
 
 Mugi runs on your Mac with open-source models you choose — searches the web, reads and writes files, runs tools, and delegates real work to background workers. **It’s a native Mac app:** chat, notes, Settings, and a first-run wizard — not something you assemble from the command line. Private by default: no telemetry, no cloud account. Your data stays on disk.
@@ -50,7 +52,7 @@ Here is a sample of what the agent can actually invoke (many more are discoverab
 | **Research** | Deep multi-source web research, scratch notes, and structured reports — **Research mode** spins a durable Kanban worker so long investigations don’t block chat |
 | **Memory & knowledge** | Persistent memory search; digest folders into a **Knowledge Base** with synthesis, sources, and a graph; query corpora with citations; **Vault** notes with a live knowledge graph |
 | **Work execution** | In-thread **task plans**; durable **Kanban** batches with cross-profile workers and subagents; optional **Council mode** (researcher / verifier / contrarian pipeline); **Results** workspace for HTML, markdown, and report deliverables |
-| **System & Mac** | Shell commands (explicit opt-in); run Python snippets; calendar and reminders; weather; email draft listing; scheduled tasks and short timers; macOS Spotlight search; host diagnostics |
+| **System & Mac** | Shell commands (explicit opt-in); run Python snippets; calendar and reminders; weather; **Dashboard panel** (**⇧⌘D**); email draft listing; scheduled tasks and short timers; macOS Spotlight search; host diagnostics |
 | **Voice & media** | Voice input, TTS, Full Duplex voice (beta); optional CLI tier for **ffmpeg** / Homebrew-backed media tools when enabled |
 | **Mesh (optional)** | Contact peer agents on your LAN, share files, durable audit trail of peer traffic |
 | **Extensibility** | Bundled **skills**, **plugins**, and **MCP** servers add more tools without rebuilding the app |
@@ -101,6 +103,9 @@ Feed it folders, documents, codebases, or research collections and it compiles a
 
 ### Bring your own model
 A three-way engine selector: **MLX** (default, fully managed local inference), **Exo** (connect to your own local cluster), or **External API** (LM Studio, Ollama, vLLM, or any OpenAI-compatible endpoint).
+
+### Global Dashboard — your Mac at a glance
+Press **⇧⌘D** from anywhere (or **View → Dashboard**) for a floating panel: live CPU/GPU/RAM/disk/network vitals, calendar and reminders, weather, markets, RSS news, and a dedicated agent chat with quick actions — all local, no cloud widgets.
 
 ### And more
 - **Results workspace** — durable HTML pages, markdown reports, and chart/image deliverables tied to a conversation, versioned on disk
