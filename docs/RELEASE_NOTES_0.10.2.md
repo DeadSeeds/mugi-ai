@@ -22,19 +22,21 @@ The Quick Panel and Dashboard shortcuts are now registered as true system hot ke
   Settings shows a "couldn't be registered — pick another shortcut" banner instead of failing
   silently.
 - **Dashboard shortcut works inside Mugi too.** A local key-code monitor backs up Carbon registration
-  so ⌃⌥D (or your custom combo) fires even when Mugi is focused. The 0.10.1 path matched letter keys
+  so ⇧⌥D (or your custom combo) fires even when Mugi is focused. The 0.10.1 path matched letter keys
   via `charactersIgnoringModifiers`, which is often empty — so the shortcut could die *inside the app*
   on some Macs. **View → Dashboard** is now wired to the same shortcut.
-- **Legacy ⇧⌘D Dashboard shortcuts auto-migrate to ⌃⌥D** on first launch of this build (⇧⌘D collides with
-  Mugi’s shell-deny menu and most browsers).
+- **Legacy ⇧⌘D Dashboard shortcuts auto-migrate to the new default** on first launch of this build (⇧⌘D
+  collides with Mugi’s shell-deny menu and most browsers).
 
 ### Customizable Dashboard shortcut
 
 - The Dashboard shortcut is now **customizable** in **Settings → Dashboard**, just like the Quick Panel.
-- The default changed to **⌃⌥D** to avoid clashing with **⇧⌘D**, which many browsers and dev tools
-  already use (and which Mugi reserves for **Deny shell command** while a shell-approval alert is open).
-- Recordings that stored **⇧⌥D** (shift+option, easy to mistake for the intended control+option) now
-  auto-migrate to **⌃⌥D** on first launch.
+- The default is **⇧⌥D**. We avoid **⌃⌥D** because `control+option` is the **VoiceOver modifier** and is
+  commonly claimed by global-hotkey tools (**BetterTouchTool**, **Alfred**, window managers) — on those
+  Macs ⌃⌥D can't register and silently does nothing (this is why a shortcut can work on one Mac and not
+  another). We also avoid **⇧⌘D**, which browsers/dev tools use and Mugi reserves for **Deny shell command**.
+- If your chosen combo is already owned by another app, Settings now says so and suggests a free one —
+  ⇧⌥-based combos are usually safe.
 
 ### Shortcut diagnostics — see exactly why a shortcut isn't firing
 
@@ -43,7 +45,10 @@ The Quick Panel and Dashboard shortcuts are now registered as true system hot ke
   and a **Last triggered** line that updates the instant the shortcut fires. Press the keys with the
   panel open and watch it light up — that's end-to-end proof, not a guess.
 - If a combo can't register (another app owns it), the panel says so instead of silently doing nothing.
-  **Re-register** and **Reset to ⌃⌥D** buttons are right there.
+  **Re-register** and **Reset to default** buttons are right there.
+- The pane is also wired to the **correct** manager now: a SwiftUI `@EnvironmentObject` type-collision
+  meant the Dashboard pane was silently editing the **Quick Panel** shortcut, so Dashboard shortcut
+  changes never took effect. Fixed.
 
 ### Calendar access that prompts correctly
 
@@ -83,8 +88,10 @@ The Quick Panel and Dashboard shortcuts are now registered as true system hot ke
 - Existing installs: **Mugi → Check for Updates…** after this build is published to Sparkle.
 - **You can remove Mugi from System Settings → Privacy & Security → Input Monitoring** — it is no
   longer used for shortcuts.
-- The Dashboard shortcut default is now **⌃⌥D**. If you'd set a custom Dashboard shortcut, it is
-  preserved. Stored **⇧⌘D** Dashboard shortcuts auto-migrate to **⌃⌥D** on first launch of this build.
+- The Dashboard shortcut default is now **⇧⌥D**. If you'd set a custom Dashboard shortcut, it is
+  preserved. Stored legacy **⇧⌘D** Dashboard shortcuts auto-migrate to the new default on first launch.
+  If ⇧⌥D does nothing on your Mac, another app likely owns it — open **Settings → Dashboard → Shortcut
+  diagnostics**, which now shows whether it registered and lets you pick a free combo.
   **⇧⌘D** continues to mean **Deny shell command** when a shell-approval alert is open.
 - **Google Calendar in a browser only?** Add your Google account under **System Settings → Internet
   Accounts** (or **Settings → Access → Open Internet Accounts…** in Mugi) so events sync to macOS;
