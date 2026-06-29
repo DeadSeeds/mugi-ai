@@ -33,6 +33,17 @@ The Quick Panel and Dashboard shortcuts are now registered as true system hot ke
 - The Dashboard shortcut is now **customizable** in **Settings → Dashboard**, just like the Quick Panel.
 - The default changed to **⌃⌥D** to avoid clashing with **⇧⌘D**, which many browsers and dev tools
   already use (and which Mugi reserves for **Deny shell command** while a shell-approval alert is open).
+- Recordings that stored **⇧⌥D** (shift+option, easy to mistake for the intended control+option) now
+  auto-migrate to **⌃⌥D** on first launch.
+
+### Shortcut diagnostics — see exactly why a shortcut isn't firing
+
+- **Settings → Dashboard → Shortcut diagnostics** shows the live health of the Dashboard shortcut:
+  whether it registered **system-wide**, whether the **in-app** monitor is active, the **stored combo**,
+  and a **Last triggered** line that updates the instant the shortcut fires. Press the keys with the
+  panel open and watch it light up — that's end-to-end proof, not a guess.
+- If a combo can't register (another app owns it), the panel says so instead of silently doing nothing.
+  **Re-register** and **Reset to ⌃⌥D** buttons are right there.
 
 ### Calendar access that prompts correctly
 
