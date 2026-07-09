@@ -61,7 +61,7 @@ Patch release following 0.10.0. Focus: **global Dashboard panel**, **tile polish
 
 - Dashboard panel height is computed from SwiftUI layout; very long calendar lists may approach the max panel height (~72% of screen) before clipping — open Calendar.app for the full month view.
 - EventKit still depends on macOS calendar sync; remote calendars may lag until Calendar.app or `refreshSourcesIfNecessary` has pulled updates.
-- Kernel legacy-loop deletion (Slice 6) remains **deferred** — this release does not remove the `[kernel] enabled = false` revert valve.
+- Kernel legacy-loop deletion (Slice 6) **landed** after this release — see `docs/kernel_cutover_soak.md` and git tag `legacy-execute-raw-agent-final`.
 
 User manual: [Dashboard panel](https://mugi-ai.com/manual/chapter.html?f=08-right-panels.md#dashboard-panel) (also in `website/manual/docs/08-right-panels.md`).
 
