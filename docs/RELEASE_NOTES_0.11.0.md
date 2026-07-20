@@ -35,7 +35,7 @@ The Library graduates from a mode-picker into a continuous study surface.
 
 ### Kernel & reliability
 
-- **Kernel cutover complete** — legacy `execute_raw_agent` path removed; chat and workers run on the kernel stack by default.
+- **Kernel cutover complete** — legacy `execute_raw_agent` path removed; chat and workers run on the kernel stack unconditionally.
 - **Activity trust summary** — faster, cached health blocks for Knowledge, Vault, and related subsystems.
 - **Near-duplicate reply guards** — fewer redundant memory searches and repeated assistant turns under load.
 

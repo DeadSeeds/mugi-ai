@@ -1,5 +1,9 @@
 # Mugi 0.10.0 — Public Beta
 
+> **Supersession (post–Phase 5 Slice 6):** the kernel path is now **unconditional**.
+> `[kernel] enabled = false` is ignored and does **not** restore a legacy loop
+> (that path was deleted). The “Revert the kernel” note below is historical only.
+
 Focus: **a new agent engine**, **durable Results deliverables**, **verify-before-assert grounding**, and **Exo as a connect-only local option** — while **MLX (mlx-vlm) remains the default** managed engine.
 
 - Build number **6** (Sparkle compares `CFBundleVersion` for same marketing version).
@@ -83,7 +87,7 @@ Focus: **a new agent engine**, **durable Results deliverables**, **verify-before
 - Existing external backend users: stay `external` even if URL contains `:52415`.
 - To use Exo: install and run Exo separately, then select **Exo (connect)** in Settings → LLMs.
 - **SearXNG:** if local search never worked on your machine, update and confirm Settings → Network shows `127.0.0.1` (migration runs automatically). Use **Refresh** / **Start** if Docker + Colima are not running yet.
-- **Revert the kernel** (support/debug only): set `[kernel] enabled = false` in `mugi_config.toml`. Every surface returns to the legacy loop immediately.
+- ~~**Revert the kernel** (support/debug only): set `[kernel] enabled = false`~~ — **obsolete after Slice 6.** The flag is ignored; there is no legacy loop to restore.
 
 ---
 

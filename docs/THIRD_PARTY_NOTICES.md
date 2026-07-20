@@ -92,6 +92,8 @@ it.
 | Component | Location | Use | License |
 |-----------|----------|-----|---------|
 | [Chatterbox TTS](https://github.com/resemble-ai/chatterbox) | `~/.mugi/chatterbox-venv` | Reference-audio voice cloning | MIT |
+| [mlx_whisper](https://github.com/ml-explore/mlx-examples/tree/main/whisper) / [mlx-whisper](https://pypi.org/project/mlx-whisper/) | `~/.mugi/whisper-venv` | Optional Chat file transcription (Settings → Advanced → Install) | MIT |
+| Whisper weights (e.g. `mlx-community/whisper-tiny`) | `~/.mugi/models/mlx-whisper/` | On-device speech model for file transcription | Model card (often MIT / Apache 2.0) |
 | [Hyperframes](https://github.com/heygen-com/hyperframes) | `~/.mugi/hyperframes` | HTML-to-video rendering | Apache 2.0 |
 | Node.js | `~/.mugi/hyperframes/` (via installer) | Hyperframes runtime | MIT |
 | Chromium | `~/.mugi/hyperframes/` (via installer) | Headless browser for Hyperframes | BSD-style |
