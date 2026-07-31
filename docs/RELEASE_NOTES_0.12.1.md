@@ -2,7 +2,6 @@
 
 Patch release following **0.12.0**. Focus: **reliability of work that already ships** — Kanban boards that stay honest under load, study and research that route without scavenger hunts, and filesystem search that stops escalating into home-wide shell greps.
 
-- Build number **15** (Sparkle compares `CFBundleVersion`).
 
 ---
 
