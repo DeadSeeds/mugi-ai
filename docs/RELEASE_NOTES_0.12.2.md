@@ -15,7 +15,7 @@ Patch release following **0.12.1**. Focus: **doing the boring, hard work honestl
 
 ### Reading the whole thing, or saying exactly what was missed
 
-Several read paths were quietly capped at numbers chosen years ago, and the model would summarize the first few pages as though it had read everything. That class of bug is now gone across the board.
+Several read paths were quietly capped at numbers chosen when initial development of the app began, and the model would summarize the first few pages as though it had read everything. That class of bug is now gone across the board.
 
 - **File reads size themselves from the model's context budget** rather than a hardcoded window, and no longer elide the middle of a document.
 - **Web pages paginate** — long pages can be read through to the end instead of being truncated with an apology.
@@ -89,4 +89,4 @@ Personal context and remote messaging surfaces needed a real boundary rather tha
 
 ---
 
-Feedback welcome via GitHub issues or your usual channel.
+Feedback welcome via GitHub issues.
