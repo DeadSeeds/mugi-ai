@@ -51,7 +51,7 @@ Here is a sample of what the agent can actually invoke (many more are discoverab
 | **Documents & OCR** | Extract text from PDFs; split and merge PDFs; OCR scanned PDFs and images (vision + Tesseract + Kraken paths for harder layouts) |
 | **Research** | Deep multi-source web research, scratch notes, and structured reports — **Research mode** spins a durable Kanban worker so long investigations don’t block chat |
 | **Memory & knowledge** | Persistent memory search; digest folders into a **Knowledge Base** with synthesis, sources, and a graph; query corpora with citations; **Vault** notes with a live knowledge graph |
-| **Work execution** | In-thread **task plans**; durable **Kanban** batches with cross-profile workers and subagents; optional **Council mode** (researcher / verifier / contrarian pipeline); **Results** workspace for HTML, markdown, and report deliverables |
+| **Work execution** | In-thread **task plans**; durable **Kanban** batches with cross-profile workers, **named jobs** you hire in chat, and subagents; optional **Council mode** (researcher / verifier / contrarian pipeline); **Results** workspace for HTML, markdown, and report deliverables |
 | **System & Mac** | Shell commands (explicit opt-in); run Python snippets; calendar and reminders; weather; **Dashboard panel** (**⇧⌘D**); email draft listing; scheduled tasks and short timers; macOS Spotlight search; host diagnostics |
 | **Voice & media** | Voice input, TTS, Full Duplex voice (beta); optional CLI tier for **ffmpeg** / Homebrew-backed media tools when enabled |
 | **Mesh (optional)** | Contact peer agents on your LAN, share files, durable audit trail of peer traffic |
@@ -88,7 +88,7 @@ Mugi builds a working model of your projects, preferences, and commitments, stor
 Anticipatory work follows a **notice → surface → ask → approve → do** cycle.
 
 - An **Activity feed** and "On my mind" inbox: Approve / Discuss / Dismiss
-- A durable, encrypted **Kanban** board for multi-step work that survives restarts
+- A durable, encrypted **Kanban** board for multi-step work that survives restarts — including **named jobs** you hire in chat with a charter and a stop-line
 - Nothing tool-using runs from the background without your explicit go-ahead
 
 ### AI-assisted notes & Vault
