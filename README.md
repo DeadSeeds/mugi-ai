@@ -7,7 +7,7 @@
 
 [**Download**](https://mugi-ai.com) · [**Website**](https://mugi-ai.com) · [**User Manual**](https://mugi-ai.com/manual/index.html) · [**Report an issue**](https://github.com/DeadSeeds/mugi-ai/issues)
 
-![Platform: macOS 15+](https://img.shields.io/badge/macOS-15%2B-black)
+![Platform: macOS 26.2+](https://img.shields.io/badge/macOS-26.2%2B-black)
 ![Apple Silicon required](https://img.shields.io/badge/Apple%20Silicon-required-black)
 ![Status: Public Preview](https://img.shields.io/badge/status-public%20preview-22d3ee)
 ![Local-first](https://img.shields.io/badge/local--first-no%20cloud-emerald)
@@ -119,7 +119,7 @@ Press **⇧⌘D** from anywhere (or **View → Dashboard**) for a floating panel
 
 | | |
 |---|---|
-| **OS** | macOS 15.0 (Sequoia) or later |
+| **OS** | macOS 26.2 or later |
 | **Hardware** | Apple Silicon (M-series) **required** — Intel Macs are not supported |
 | **Models** | Recommended MLX models download on first run; or bring your own |
 

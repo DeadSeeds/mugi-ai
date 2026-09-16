@@ -68,17 +68,14 @@ Agreement](https://docs.python.org/3/license.html).
 
 ## 3. MLX inference stack (optional; installed on demand)
 
-When you enable MLX or install the local model server, Mugi may create
-`~/.mugi/mlx-venv` (and optionally `~/.mugi/mlx-utility-venv`) using
-`requirements-mlx-pinned.txt`:
+When you enable local models, Mugi installs the **mlx-serve** binary under
+`~/.mugi/mlx-serve/` (not a pip venv). Speech-to-text may still use
+`~/.mugi/mlx-audio-venv` / `whisper-venv`.
 
 | Component | Use | License | Copyright |
 |-----------|-----|---------|-----------|
-| [MLX](https://github.com/ml-explore/mlx) | Apple Silicon ML framework | MIT | Apple Inc. |
-| [mlx-lm](https://github.com/ml-explore/mlx-lm) | Language models | MIT | Apple Inc. |
-| [mlx-vlm](https://github.com/Blaizzy/mlx-vlm) | Vision-language server | MIT | Blaizzy et al. |
-| [mlx-embeddings](https://github.com/Blaizzy/mlx-embeddings) | Text embeddings | MIT | Blaizzy et al. |
-| [transformers](https://github.com/huggingface/transformers) | Model configs/tokenizers | Apache 2.0 | Hugging Face |
+| [mlx-serve](https://github.com/ddalcu/mlx-serve) | Local OpenAI-compatible engine | MIT | David Dalcu |
+| [MLX](https://github.com/ml-explore/mlx) | Apple Silicon ML framework (used by mlx-serve) | MIT | Apple Inc. |
 
 **Model weights** (e.g. from Hugging Face `mlx-community`) are separate
 downloads with their own licenses (often MIT or Apache 2.0 per model card).
