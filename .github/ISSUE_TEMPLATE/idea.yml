@@ -1,0 +1,21 @@
+name: Share an idea
+description: A feature suggestion or a thought about the direction.
+title: "[Idea]: "
+labels: ["triage", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We read every idea — they genuinely shape what gets built next.
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like Mugi to do? A sentence or a page — both welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help you?
+      placeholder: When I …, I wish Mugi would …
