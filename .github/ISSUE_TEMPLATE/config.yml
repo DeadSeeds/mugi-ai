@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User manual
+    url: https://mugi-ai.com/manual/index.html
+    about: Setup help and how Mugi works.
+  - name: Download Mugi
+    url: https://mugi-ai.com
+    about: The latest beta and what's new.
