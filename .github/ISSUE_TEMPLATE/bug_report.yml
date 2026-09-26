@@ -1,0 +1,74 @@
+name: Report a problem
+description: Something in Mugi isn't working the way it should.
+title: "[Bug]: "
+labels: ["triage", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Mugi. We read every report and usually reply within a couple of days.
+        If you don't know an answer, just write "not sure" — that's completely fine.
+  - type: dropdown
+    id: app-version
+    attributes:
+      label: Which version of Mugi are you using?
+      options:
+        - 0.16.0-beta (latest)
+        - 0.17.0-beta
+        - Older
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      description: Apple menu → About This Mac.
+      placeholder: "e.g. macOS 26.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: setup-path
+    attributes:
+      label: How did you set Mugi up?
+      options:
+        - The in-app setup wizard
+        - A manual install (Homebrew / pip)
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: The plain-language version is perfect.
+      placeholder: Mugi got stuck while installing the MLX backend…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you did, in order, so we can try the same thing.
+      placeholder: |
+        1. Opened Mugi
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages or log excerpts (optional)
+      description: Only if you're comfortable sharing them. Everything else stays on your Mac.
+  - type: checkboxes
+    id: contact-ok
+    attributes:
+      label: Contact
+      options:
+        - label: It's okay to reply here if we need more details.
