@@ -1,7 +1,8 @@
 # Mugi 0.17.1 — Public Beta
 
-A small maintenance beta about setup: Mugi installs its own local AI engine for
-you, and we removed an old manual step that could leave some Macs stuck.
+This update is about getting set up and getting out of your way: Mugi installs
+its own local AI engine for you, you come back to the conversation you left,
+and a handful of everyday screens now tell the truth.
 
 ## What's new
 
@@ -14,6 +15,24 @@ you, and we removed an old manual step that could leave some Macs stuck.
 - **Recovery buttons do the same thing they promise.** **Reinstall** and
   **Revert to stable** in **Settings → LLMs** now simply re-download the local
   engine — no hidden package steps, nothing to type.
+- **Come back to your conversation.** Relaunching Mugi no longer opens a
+  brand-new empty chat; you're back where you left off.
+- **One place to choose your local engine.** **Settings → LLMs** has a single,
+  simple engine picker (it replaces the old scattered controls). The optional
+  Python MLX engine is available again — pick it and Mugi installs it for you,
+  with the download size shown up front.
+
+## Also in this update
+
+- **Your downloaded-models list tells the truth.** If it can't load, Mugi says
+  so instead of showing an empty list.
+- **Plainer error messages.** First-run setup and Diagnostics failures explain
+  themselves in plain words and offer a way forward.
+- **Open Software Update works.** The button now lands on the Software Update
+  pane, where it promised to.
+- **Snappier after actions.** A reply that ended by using a tool could add a
+  few seconds of delay to your next message; that's fixed.
+- **Under the hood.** A long list of reliability fixes too small to list.
 
 ## After you update
 
