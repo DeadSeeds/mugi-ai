@@ -22,6 +22,22 @@ keeps only what you actually said.
   plainly — **mlx-serve**, **oMLX** as a second on-device engine, plus
   **Exo** and **External API** — and says up front what each one can load,
   instead of failing later.
+- **Your work can share the model.** **Model slots** in **Settings → LLMs**
+  lets a background task run alongside your conversation. Each reply takes a
+  little longer and the local model uses more memory; **Restart Model** applies
+  a change in about 15 seconds, and Diagnostics shows the width the engine is
+  actually serving.
+- **The task board tells the truth.** A cancelled card is no longer reported as
+  finished, a card you park for later stays parked instead of looking blocked,
+  and newly filed cards appear on the board right away. Running cards also keep
+  the Mac awake, down to 30% on battery.
+- **The model's window no longer collapses.** On some larger local models the
+  automatic context setting resolved to a few hundred tokens, so ordinary
+  prompts were refused; Mugi now checks the window before calling the engine
+  ready and starts at a usable size.
+- **Editing a Results page works the first time.** A save whose text was already
+  in place is no longer reported as an error, and an edit sent as page content
+  is accepted instead of being refused for a missing field.
 - **Mugi has one engine story, not three.** The old bundled "Splash" engine and
   adapter training are gone; the manual now says so rather than hedging.
 - **Your chats come back.** Relaunching Mugi returns you to the conversation you
