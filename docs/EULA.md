@@ -30,7 +30,7 @@ The **proprietary portions** of the Software — including the Mugi macOS applic
 
 ## 3. Third-Party and Open Source Software
 
-The Software includes or may download **Third-Party Components**, including open source software. Examples include the Sparkle update framework, MarkdownUI, the Python backend and its dependencies, and optional stacks such as MLX, Chatterbox TTS, or Hyperframes when you choose to install them.
+The Software includes or may download **Third-Party Components**, including open source software. Examples include the Sparkle update framework, the Smart Turn end-of-turn model, the Python backend and its dependencies, and optional stacks such as MLX, Chatterbox TTS, or Hyperframes when you choose to install them.
 
 A current list of major Third-Party Components, their licenses, and attribution is provided in:
 

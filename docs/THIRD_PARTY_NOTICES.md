@@ -1,6 +1,6 @@
 # Mugi — Third-Party and Open Source Notices
 
-**Last updated:** June 2026
+**Last updated:** October 2026
 
 Mugi (the proprietary macOS application and its bundled local backend) includes
 or may download **third-party and open source software** ("Third-Party
@@ -21,7 +21,40 @@ Full license texts for common licenses (MIT, Apache 2.0, BSD 3-Clause) are in
 | Component | Use | License | Copyright / source |
 |-----------|-----|---------|-------------------|
 | [Sparkle](https://github.com/sparkle-project/Sparkle) | In-app software updates | MIT | Sparkle Project |
-| [MarkdownUI](https://github.com/gonzalezreal/swift-markdown-ui) | Markdown rendering in the UI | MIT | González Real |
+| [Smart Turn v3.2 (CoreML)](https://huggingface.co/aufklarer/Smart-Turn-v3.2-CoreML) | On-device end-of-turn detection for hands-free voice (bundled as `smart_turn.mlmodelc`) | BSD 2-Clause | Copyright (c) 2024-2025, Daily; weights from [pipecat-ai/smart-turn](https://github.com/pipecat-ai/smart-turn) |
+
+### Smart Turn v3.2 — BSD 2-Clause
+
+The bundled `smart_turn.mlmodelc` is a CoreML export of `pipecat-ai/smart-turn-v3`
+(revision `f766f81d3cfdf7737ac64aad813d91bbfd56bf93`). It runs entirely on this
+Mac and receives only the last 8 seconds of microphone audio, held in memory.
+
+```text
+BSD 2-Clause License
+
+Copyright (c) 2024-2025, Daily
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
 
 ---
 
@@ -80,7 +113,11 @@ When you enable local models, Mugi installs the **mlx-serve** binary under
 **Model weights** (e.g. from Hugging Face `mlx-community`) are separate
 downloads with their own licenses (often MIT or Apache 2.0 per model card).
 You are responsible for complying with each model's license when you download
-it.
+it. Media-generation weights are the exception to "often permissive": video
+models such as LTX-2.5 ship under a community license that adds attribution,
+machine-generated-content disclosure and transparency obligations, and a
+revenue threshold above which a paid license is required. Read the model card
+and license before using those weights commercially.
 
 ---
 
@@ -109,7 +146,18 @@ terms. Mugi does not bundle their server software.
 
 ---
 
-## 6. Trademarks
+## 6. Ideas and inspiration (no code bundled)
+
+Some designs were influenced by other projects even though no code was copied.
+Credit belongs where the thinking came from.
+
+| Project | What it shaped |
+|---------|----------------|
+| [UniiChat](https://github.com/VictorTaelin/uniichat) by Victor Taelin (Apache 2.0) | Addressable context compaction: keeping a compacted conversation's message ranges — and a short prose head — reachable, instead of replacing history with one opaque summary. Mugi's implementation is `mugi/agent/anchor_segments.py`; no UniiChat code is bundled. |
+
+---
+
+## 7. Trademarks
 
 Third-party names (Apple, MLX, Hugging Face, etc.) are trademarks of their
 respective owners. Mugi is not affiliated with or endorsed by those parties
@@ -117,7 +165,7 @@ unless explicitly stated.
 
 ---
 
-## 7. Questions
+## 8. Questions
 
 For questions about these notices, use the feedback channels on
 [mugi-ai.com](https://mugi-ai.com) or **Help → About Mugi** in the application.
