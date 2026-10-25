@@ -62,16 +62,42 @@ Writing rules:
 
 ## Claims checklist (every beta)
 
-- The requirements line shown on the site lives in the page HTML
-  (`data-mugi-requirements` in `index.html` / `releases.html`); `download.js`
-  deliberately does not overwrite it. Update it in the same commit as any
+One checker owns this list: `scripts/check_release_site.py`. It runs in
+`make release-gate-static`, **and** in the deploy job before Netlify (against
+the tree being published), **and** against the live site after the deploy. If
+you edit a claim, run it:
+
+```bash
+~/.mugi/venv/bin/python scripts/check_release_site.py
+```
+
+- **Version currency.** The same release version must appear in: the
+  "What's new in X" callout and the newest "What's working well" row on
+  `index.html`; the "Latest Release" badge, "Highlights in X" heading and
+  newest changelog heading on `releases.html`; the intro and newest "Version
+  X" paragraph on `preview.html`; and `website/releases.json`. They must all
+  agree. A release tag may be created *after* the local gate (that is why a
+  draft may lead the newest tag locally), but the deploy job passes the real
+  release version, so nothing may lead or trail it there.
+- **Floor.** The requirements line is a claim about the build. `download.js`
+  fills `[data-mugi-requirements]` from `releases.json`; the static HTML is
+  only the no-JS fallback, and the checker validates both (plus
+  `website/manual/**`). Update them in the same commit as any
   `LSMinimumSystemVersion` change — that plist value is the floor's source of
-  truth. `scripts/publish_release.sh` (and the appcast workflow) derive the
-  same string into `website/releases.json` from the plist.
-- The "PUBLIC PREVIEW — <MONTH YEAR>" badges say the current month.
-- Version strings on the site come from `website/releases.json` at runtime;
-  the hardcoded fallbacks in `index.html` / `releases.html` are updated when
-  the version in them changes.
+  truth. `scripts/publish_release.sh` and the appcast workflow derive the same
+  string into `website/releases.json` from the plist; neither may spell it.
+- **Downloads.** Every `data-mugi-download` href and every hard-coded
+  `Mugi-<version>.zip` must name a version that exists as a tag. The static
+  fallbacks are what a person with JavaScript off downloads.
+- **Notes.** `docs/RELEASE_NOTES_<version>.md` must exist for the release and
+  name it in its first line; its short version is the newest changelog block on
+  `releases.html`, which must have bullets.
+- **Unrecognised claims fail loudly.** A version-shaped sentence the checker
+  cannot place errors out. Add its shape to the matching `_scan_*` function in
+  `scripts/check_release_site.py` (and classify it current/historical) — do not
+  delete the claim, and do not widen the sweep.
+- The "PUBLIC PREVIEW — <MONTH YEAR>" badges say the current month (not checked
+  mechanically; it is presentation, not a release claim).
 
 ## The weekly loop
 
@@ -82,7 +108,11 @@ Writing rules:
 3. **Deploy**: the Publish Sparkle Appcast workflow (or
    `publish_release.sh --netlify-only`) pushes `website/` to Netlify — it
    regenerates `website/releases.json` and `website/_redirects` from the
-   release and the app's Info.plist.
+   release and the app's Info.plist, runs `scripts/check_release_site.py`
+   **before** deploying, and fails the job if the site does not describe the
+   release.
 4. **Verify**: https://mugi-ai.com/releases shows the new entry at the top, the
    download card shows the right version and macOS floor, and the download
-   link points at the new zip.
+   link points at the new zip. The workflow's last step asserts the live
+   `releases.json` and home page say this release (bounded retries for the CDN),
+   so a stale deploy is red in CI, not discovered by a person.
